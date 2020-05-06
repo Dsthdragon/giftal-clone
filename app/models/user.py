@@ -115,7 +115,10 @@ class Client(UserMixin, db.Model):
     bank = db.Column(db.String(100))
     account_number = db.Column(db.String(20))
 
+    last_login = db.Column(db.DateTime)
+
     pin = db.relationship("ClientPin", backref=db.backref("client", lazy=True), uselist=False)
+    client_request = db.relationship("ClientRequest", backref=db.backref("client", lazy=True), uselist=False)
 
 
 class AdminRole(db.Model):
@@ -177,6 +180,18 @@ class Setting(db.Model):
     referral_bonus = db.Column(db.Float, default=1000)
     testimonies_bonus = db.Column(db.Float, default=500)
 
+    point_rate = db.Column(db.Float, default=4)
     min_withdrawal_limit = db.Column(db.Float, default=3000)
     max_withdrawal_limit = db.Column(db.Float, default=5000)
     sign_up_fee = db.Column(db.Float, default=3000)
+
+
+class ClientRequest(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    client_id = db.Column(db.Integer, db.ForeignKey("client.id"))
+    amount = db.Column(db.Float, nullable=False)
+    type = db.Column(db.String(100), nullable=False)
+    paid = db.Column(db.Boolean, default=False)
+    confirmed = db.Column(db.Boolean, default=False)
+    created = db.Column(db.DateTime, default=datetime.utcnow())
+    updated = db.Column(db.DateTime, onupdate=datetime.utcnow())

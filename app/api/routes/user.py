@@ -4,8 +4,6 @@ from flask import jsonify, make_response
 
 from app.api import bp, login_required
 
-from app.models import *
-
 from app.schemas import *
 
 from app import db
@@ -48,6 +46,11 @@ def login():
 
     if not account or not account.check_password(data.get("password")):
         return jsonify(status="failed", message="Invalid Login Details!")
+    if data['type'] == 'client' and ( not account.last_login or account.last_login.date() != datetime.today()):
+        setting = Setting.query.first()
+        account.last_login = datetime.now()
+        account.royalty_wallet += setting.login_bonus
+        db.session.commit()
 
     resp = make_response(jsonify(status="success", message="Login Successful!"))
     resp.set_cookie('auth', account.user.generate_token(not data.get("remember")))
@@ -61,6 +64,33 @@ def get_setting():
         status='success',
         message='Setting Found',
         data=SettingSchema().dump(setting)
+    )
+
+
+@bp.route("/user/<int:user_id>")
+@login_required(role='Admin')
+def toggle_block(user_id):
+    current = User.current()
+    user = User.query.get(user_id)
+    if not user:
+        return jsonify(status="failed", message="User Not Found!")
+
+    if current.id == user.id:
+        return jsonify(status="failed", message="Cant Update Your Own Account!")
+
+    user.blocked = not user.blocked
+    db.session.commit()
+    data = {}
+    if user.client:
+        data = ClientSchema().dump(user.client)
+    elif user.admin:
+        data = AdminSchema().dump(user.admin)
+    elif user.vendor:
+        data = VendorSchema().dump(user.vendor)
+    return jsonify(
+        status="success",
+        message="User data Updated",
+        data=data
     )
 
 
@@ -86,6 +116,7 @@ def update_setting():
     setting.share_news = data.get("share_news") or setting.share_news
     setting.sign_up_bonus = data.get("sign_up_bonus") or setting.sign_up_bonus
     setting.sign_up_fee = data.get("sign_up_fee") or setting.sign_up_fee
+    setting.point_rate = data.get("point_rate") or setting.point_rate
     setting.testimonies_bonus = data.get("testimonies_bonus") or setting.testimonies_bonus
 
     db.session.commit()
@@ -93,6 +124,167 @@ def update_setting():
         status="success",
         message="Settings Updated",
         data=SettingSchema().dump(setting)
+    )
+
+
+@bp.route("/request/referral", methods=["POST"])
+@login_required(role='client')
+def referral_request():
+    data = request.get_json()
+    if not data.get('amount'):
+        return jsonify(status="failed", message="Amount Required!")
+    amount = int(data.get('amount'))
+    client = User.current().client
+    setting = Setting.query.first()
+
+    if client.referral_wallet < amount:
+        return jsonify(status="failed", message="Amount Exceed Wallets Funds!")
+    if amount < setting.min_withdrawal_limit:
+        return jsonify(status="failed", message="Amount Below Minimum Withdrawal Limit !")
+    if amount > setting.max_withdrawal_limit:
+        return jsonify(status="failed", message="Amount Exceed Maximum Withdrawal Limit !")
+    current_request = ClientRequest.query.filter_by(client_id=client.id, confirmed=False).first()
+    if current_request:
+        return jsonify(status="failed", message="Already Have an Active Request")
+
+    client_request = ClientRequest()
+    client_request.client_id = client.id
+    client_request.type = 'referral'
+    client_request.amount = amount
+
+    client.referral_wallet -= amount
+    db.session.add(client_request)
+    db.session.commit()
+
+    return jsonify(
+        status="success",
+        message="Referral Cash Out Request",
+        data=ClientRequestSchema().dump(client_request)
+    )
+
+
+@bp.route("/request/royalty", methods=["POST"])
+@login_required(role='client')
+def royalty_request():
+    data = request.get_json()
+    if not data.get('amount'):
+        return jsonify(status="failed", message="Amount Required!")
+    amount = int(data.get('amount'))
+    client = User.current().client
+    setting = Setting.query.first()
+    cash_value = amount / setting.point_rate
+
+    if client.royalty_wallet < amount:
+        return jsonify(status="failed", message="Amount Exceed Wallets Funds!")
+    if cash_value < setting.min_withdrawal_limit:
+        return jsonify(status="failed", message="Amount Below Minimum Withdrawal Limit !")
+    if cash_value > setting.max_withdrawal_limit:
+        return jsonify(status="failed", message="Amount Exceed Maximum Withdrawal Limit !")
+    current_request = ClientRequest.query.filter_by(client_id=client.id, confirmed=False).first()
+    if current_request:
+        return jsonify(status="failed", message="Already Have an Active Request")
+
+    client_request = ClientRequest()
+    client_request.client_id = client.id
+    client_request.type = 'royalty'
+    client_request.amount = cash_value
+
+    client.royalty_wallet -= amount
+    db.session.add(client_request)
+    db.session.commit()
+
+    return jsonify(
+        status="success",
+        message="Referral Cash Out Request",
+        data=ClientRequestSchema().dump(client_request)
+    )
+
+
+@bp.route("/request")
+@login_required()
+def get_requests():
+    client_requests = ClientRequest.query.order_by(ClientRequest.created.desc()).all()
+    return jsonify(
+        status="success",
+        message="Client Request Found",
+        data=ClientRequestSchema(many=True).dump(client_requests)
+    )
+
+
+@bp.route("/client/<int:client_id>/request")
+@login_required()
+def get_client_requests(client_id):
+    client_requests = ClientRequest.query.filter_by(client_id=client_id).order_by(ClientRequest.created.desc()).all()
+    return jsonify(
+        status="success",
+        message="Client Request Found",
+        data=ClientRequestSchema(many=True).dump(client_requests)
+    )
+
+
+@bp.route("/request/confirmed")
+@login_required()
+def get_confirmed_requests():
+    client_requests = ClientRequest.query.filter_by(confirmed=True).order_by(ClientRequest.created.desc()).all()
+    return jsonify(
+        status="success",
+        message="Client Request Found",
+        data=ClientRequestSchema(many=True).dump(client_requests)
+    )
+
+
+@bp.route("/request/unconfirmed")
+@login_required()
+def get_unconfirmed_requests():
+    client_requests = ClientRequest.query.filter_by(paid=False).all()
+    return jsonify(
+        status="success",
+        message="Client Request Found",
+        data=ClientRequestSchema(many=True).dump(client_requests)
+    )
+
+
+@bp.route("/request/<int:request_id>/paid")
+@login_required(role='admin')
+def made_payment_for_request(request_id):
+    client_request = ClientRequest.query.get(request_id)
+    if not client_request:
+        return jsonify(
+            status='failed',
+            message='Request Not Found'
+        )
+    client_request.paid = True
+    db.session.commit()
+    return jsonify(
+        status="success",
+        message="Client Request Paid",
+        data=ClientRequestSchema().dump(client_request)
+    )
+
+
+@bp.route("/request/<int:request_id>/confirm")
+@login_required(role='client')
+def confirm_request(request_id):
+    client_request = ClientRequest.query.get(request_id)
+    if not client_request:
+        return jsonify(
+            status='failed',
+            message='Request Not Found'
+        )
+    client = User.current().client
+    if client.id != client_request.client_id:
+        return jsonify(
+            status='failed',
+            message='Request does not belong to you'
+        )
+    settings = Setting.query.first()
+    client_request.confirmed = True
+    client.royalty_wallet += settings.testimonies_bonus
+    db.session.commit()
+    return jsonify(
+        status="success",
+        message="Client Request Confirmed",
+        data=ClientRequestSchema().dump(client_request)
     )
 
 
@@ -119,7 +311,7 @@ def create_admin():
         return jsonify(status="failed", message="Email Address already in system!")
 
     user = User()
-
+    user.active = True
     admin = Admin()
 
     admin.email = data.get("email").lower()
@@ -345,7 +537,7 @@ def create_vendor():
         return jsonify(status="failed", message="Email Address already in system!")
 
     user = User()
-
+    user.active = True
     vendor = Vendor()
 
     vendor.email = data.get("email").lower()
@@ -525,12 +717,23 @@ def create_client():
     client.phone = data.get("phone")
 
     client.set_password(data.get("password"))
+    client.last_login = datetime.now()
 
     db.session.add(user)
     db.session.add(client)
     db.session.commit()
 
     return jsonify(status="success", message="Client Created SuccessFul", data=ClientSchema().dump(client))
+
+
+@bp.route("/client/<int:client_id>/referred")
+def get_client_referred(client_id):
+    clients = Client.query.filter_by(referral_id=client_id).order_by(Client.created.desc()).all()
+    return jsonify(
+        status="success",
+        message="Referred Found",
+        data=ClientSchema(many=True).dump(clients)
+    )
 
 
 @bp.route("/client")

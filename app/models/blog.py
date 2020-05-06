@@ -14,6 +14,7 @@ class Activity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     client_id = db.Column(db.Integer, db.ForeignKey("client.id"), nullable=False)
 
+    client = db.relationship("Client", backref=db.backref("activity", lazy=True))
     post_share = db.relationship("PostShare", backref=db.backref("activity", lazy=True), uselist=False)
     comment = db.relationship("Comment", backref=db.backref("activity", lazy=True), uselist=False)
     post_view = db.relationship("PostView", backref=db.backref("activity", lazy=True), uselist=False)
@@ -36,10 +37,13 @@ class Comment(db.Model):
     comment = db.Column(db.Text, nullable=False)
     client_id = db.Column(db.Integer, db.ForeignKey("client.id"), nullable=False)
     activity_id = db.Column(db.Integer, db.ForeignKey("activity.id"), nullable=False)
-    post_id = db.Column(db.Integer, db.ForeignKey("client.id"), nullable=False)
-
+    post_id = db.Column(db.Integer, db.ForeignKey("post.id"), nullable=False)
+    valid = db.Column(db.Boolean)
     created = db.Column(db.DateTime, default=datetime.utcnow())
     updated = db.Column(db.DateTime, onupdate=datetime.utcnow())
+
+    client = db.relationship("Client", backref=db.backref("comments", lazy=True))
+    post = db.relationship("Post", backref=db.backref("comments", lazy=True))
 
 
 class Post(db.Model):
@@ -69,6 +73,10 @@ class PostView(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     client_id = db.Column(db.Integer, db.ForeignKey("client.id"), nullable=False)
     activity_id = db.Column(db.Integer, db.ForeignKey("activity.id"), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey("post.id"), nullable=False)
+    post = db.relationship("Post", backref=db.backref("post_views", lazy=True))
+
+    client = db.relationship("Client", backref=db.backref("post_views", lazy=True))
 
     created = db.Column(db.DateTime, default=datetime.utcnow())
     updated = db.Column(db.DateTime, onupdate=datetime.utcnow())
@@ -78,6 +86,10 @@ class PostShare(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     client_id = db.Column(db.Integer, db.ForeignKey("client.id"), nullable=False)
     activity_id = db.Column(db.Integer, db.ForeignKey("activity.id"), nullable=False)
+    post_id = db.Column(db.Integer, db.ForeignKey("post.id"), nullable=False)
+
+    client = db.relationship("Client", backref=db.backref("post_shares", lazy=True))
+    post = db.relationship("Post", backref=db.backref("post_shares", lazy=True))
 
     created = db.Column(db.DateTime, default=datetime.utcnow())
     updated = db.Column(db.DateTime, onupdate=datetime.utcnow())

@@ -15,6 +15,8 @@ def login_required(role=None):
             _user = User.current()
             if not _user:
                 return jsonify(status="failed", message=user_id, isAuth=False)
+            if _user.blocked:
+                return jsonify(status="failed", message="User Account is Blocked", isAuth=False)
             if role == 'admin' and not _user.admin:
                 return jsonify(status="failed", message="Staff Only Area", isAuth=False)
             elif role == 'vendor' and not _user.vendor:

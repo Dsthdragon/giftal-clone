@@ -100,7 +100,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\n  <nav class=\"navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark\">\n    <div class=\"container px-4\">\n      <a class=\"navbar-brand\" routerLinkActive=\"active\" [routerLink]=\"['/']\">\n        <h3 class=\"text-white\">Site Name</h3>\n      </a>\n      <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed=!isCollapsed\"\n        aria-controls=\"sidenav-collapse-main\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n      <div class=\"collapse navbar-collapse\" [ngbCollapse]=\"isCollapsed\" id=\"sidenav-collapse-main\">\n        <!-- Collapse header -->\n        <div class=\"navbar-collapse-header d-md-none\">\n          <div class=\"row\">\n            <div class=\"col-6 collapse-brand\">\n              <a routerLinkActive=\"active\" [routerLink]=\"['/']\">\n                <h3>SITE NAME</h3>\n              </a>\n            </div>\n            <div class=\"col-6 collapse-close\">\n              <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed=!isCollapsed\">\n                <span></span>\n                <span></span>\n              </button>\n            </div>\n          </div>\n        </div>\n        <!-- Navbar items -->\n        <ul class=\"navbar-nav ml-auto\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link nav-link-icon\" routerLink=\"/\">\n              <i class=\"fa fa-home\"></i>\n              <span class=\"nav-link-inner--text\">Home</span>\n            </a>\n          </li>\n\n          <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n            <a class=\"nav-link pr-0\" routerLinkActive=\"active\"  role=\"button\" ngbDropdownToggle>\n              <i class=\"fa fa-filter\"></i>\n              <span class=\"nav-link-inner--text\">Feature</span>\n            </a>\n            <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n              <a class=\"dropdown-item\" *ngFor='let category of categories'\n                [routerLink]=\"['/category', category.id, category.title]\">\n                {{ category.title }}\n              </a>\n            </div>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" routerLink=\"/vendors\">\n              <i class=\"fa fa-home\"></i>\n              <span class=\"nav-link-inner--text\">Vendor</span>\n            </a>\n          </li>\n          <ng-container *ngIf='type !== \"\" else notLoggedIn'>\n            <li class=\"nav-item\">\n              <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" routerLink=\"/{{ type }}\">\n                <i class=\"ni ni-planet\"></i>\n                <span class=\"nav-link-inner--text\">Dashboard</span>\n              </a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link nav-link-icon\" (click)='userService.logout()'>\n                <i class=\"fa fa-sign-out-alt\"></i>\n                <span class=\"nav-link-inner--text\">Log Out</span>\n              </a>\n            </li>\n          </ng-container>\n          <ng-template #notLoggedIn>\n            <li class=\"nav-item\">\n              <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/register']\">\n                <i class=\"ni ni-circle-08\"></i>\n                <span class=\"nav-link-inner--text\">Register</span>\n              </a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/login']\">\n                <i class=\"ni ni-key-25\"></i>\n                <span class=\"nav-link-inner--text\">Login</span>\n              </a>\n            </li>\n          </ng-template>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <div class=\"header bg-gradient-danger py-7 py-lg-8\">\n    <div class=\"container\">\n      <div class=\"header-body text-center mb-7\">\n        <div class=\"row justify-content-center\">\n          <div class=\"col-lg-5 col-md-6\">\n            <h1 class=\"text-white\">{{ pageTitle }}</h1>\n\n            <p class=\"text-lead text-light\">\n              {{ pageSubTitle }}\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"separator separator-bottom separator-skew zindex-100\">\n      <svg x=\"0\" y=\"0\" viewBox=\"0 0 2560 100\" preserveAspectRatio=\"none\" version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\">\n        <polygon class=\"fill-default\" points=\"2560 0 2560 100 0 100\"></polygon>\n      </svg>\n    </div>\n  </div>\n  <router-outlet></router-outlet>\n</div>\n<footer class=\"py-5\">\n  <div class=\"container\">\n    <div class=\"row align-items-center justify-content-xl-between\">\n      <div class=\"col-xl-6\">\n        <div class=\"copyright text-center text-xl-left text-muted\">\n          &copy; {{ test | date: \"yyyy\" }} <a href=\"https://www.creative-tim.com?ref=ada-footer-auth-layout\"\n            class=\"font-weight-bold ml-1\" target=\"_blank\">Creative Tim</a>\n        </div>\n      </div>\n      <div class=\"col-xl-6\">\n      </div>\n    </div>\n  </div>\n</footer>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"main-content\">\n  <nav class=\"navbar navbar-top navbar-horizontal navbar-expand-md navbar-dark\">\n    <div class=\"container px-4\">\n      <a class=\"navbar-brand\" routerLinkActive=\"active\" [routerLink]=\"['/']\">\n        <h3 class=\"text-white\">Site Name</h3>\n      </a>\n      <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed=!isCollapsed\"\n        aria-controls=\"sidenav-collapse-main\">\n        <span class=\"navbar-toggler-icon\"></span>\n      </button>\n      <div class=\"collapse navbar-collapse\" [ngbCollapse]=\"isCollapsed\" id=\"sidenav-collapse-main\">\n        <!-- Collapse header -->\n        <div class=\"navbar-collapse-header d-md-none\">\n          <div class=\"row\">\n            <div class=\"col-6 collapse-brand\">\n              <a routerLinkActive=\"active\" [routerLink]=\"['/']\">\n                <h3>SITE NAME</h3>\n              </a>\n            </div>\n            <div class=\"col-6 collapse-close\">\n              <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed=!isCollapsed\">\n                <span></span>\n                <span></span>\n              </button>\n            </div>\n          </div>\n        </div>\n        <!-- Navbar items -->\n        <ul class=\"navbar-nav ml-auto\">\n          <li class=\"nav-item\">\n            <a class=\"nav-link nav-link-icon\" routerLink=\"/\">\n              <i class=\"fa fa-home\"></i>\n              <span class=\"nav-link-inner--text\">Home</span>\n            </a>\n          </li>\n\n          <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n            <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" role=\"button\" ngbDropdownToggle>\n              <i class=\"fa fa-filter\"></i>\n              <span class=\"nav-link-inner--text\">Feature</span>\n            </a>\n            <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n              <a class=\"dropdown-item\" *ngFor='let category of categories'\n                [routerLink]=\"['/category', category.id, category.title]\">\n                {{ category.title }}\n              </a>\n            </div>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" routerLink=\"/payroll\">\n              <i class=\"fa fa-piggy-bank\"></i>\n              <span class=\"nav-link-inner--text\">Payroll</span>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" routerLink=\"/how-it-works\">\n              <i class=\"fa fa-info\"></i>\n              <span class=\"nav-link-inner--text\">How It Works</span>\n            </a>\n          </li>\n          <li class=\"nav-item\">\n            <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" routerLink=\"/vendors\">\n              <i class=\"fa fa-home\"></i>\n              <span class=\"nav-link-inner--text\">Vendor</span>\n            </a>\n          </li>\n          <ng-container *ngIf='type !== \"\" else notLoggedIn'>\n            <li class=\"nav-item\">\n              <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" routerLink=\"/{{ type }}\">\n                <i class=\"ni ni-planet\"></i>\n                <span class=\"nav-link-inner--text\">Dashboard</span>\n              </a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link nav-link-icon\" (click)='userService.logout()'>\n                <i class=\"fa fa-sign-out-alt\"></i>\n                <span class=\"nav-link-inner--text\">Log Out</span>\n              </a>\n            </li>\n          </ng-container>\n          <ng-template #notLoggedIn>\n            <li class=\"nav-item\">\n              <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/register']\">\n                <i class=\"ni ni-circle-08\"></i>\n                <span class=\"nav-link-inner--text\">Register</span>\n              </a>\n            </li>\n            <li class=\"nav-item\">\n              <a class=\"nav-link nav-link-icon\" routerLinkActive=\"active\" [routerLink]=\"['/login']\">\n                <i class=\"ni ni-key-25\"></i>\n                <span class=\"nav-link-inner--text\">Login</span>\n              </a>\n            </li>\n          </ng-template>\n        </ul>\n      </div>\n    </div>\n  </nav>\n  <div class=\"header bg-gradient-danger py-7 py-lg-8\">\n    <div class=\"container\">\n      <div class=\"header-body text-center mb-7\">\n        <div class=\"row justify-content-center\">\n          <div class=\"col-lg-5 col-md-6\">\n            <h1 class=\"text-white\">{{ pageTitle }}</h1>\n\n            <p class=\"text-lead text-light\">\n              {{ pageSubTitle }}\n            </p>\n          </div>\n        </div>\n      </div>\n    </div>\n    <div class=\"separator separator-bottom separator-skew zindex-100\">\n      <svg x=\"0\" y=\"0\" viewBox=\"0 0 2560 100\" preserveAspectRatio=\"none\" version=\"1.1\"\n        xmlns=\"http://www.w3.org/2000/svg\">\n        <polygon class=\"fill-default\" points=\"2560 0 2560 100 0 100\"></polygon>\n      </svg>\n    </div>\n  </div>\n  <router-outlet></router-outlet>\n</div>\n<footer class=\"py-5\">\n  <div class=\"container\">\n    <div class=\"row align-items-center justify-content-xl-between\">\n      <div class=\"col-xl-6\">\n        <div class=\"copyright text-center text-xl-left text-muted\">\n          &copy; {{ test | date: \"yyyy\" }} <a href=\"https://www.creative-tim.com?ref=ada-footer-auth-layout\"\n            class=\"font-weight-bold ml-1\" target=\"_blank\">Creative Tim</a>\n        </div>\n      </div>\n      <div class=\"col-xl-6\">\n      </div>\n    </div>\n  </div>\n</footer>");
 
 /***/ }),
 
@@ -385,6 +385,8 @@ var routes = [
         ]
     }, {
         path: '',
+        canActivate: [_guard_auth_guard__WEBPACK_IMPORTED_MODULE_6__["AuthGuard"]],
+        data: { role: 'free' },
         component: _layouts_auth_layout_auth_layout_component__WEBPACK_IMPORTED_MODULE_5__["AuthLayoutComponent"],
         children: [
             {
@@ -1027,6 +1029,15 @@ var AuthGuard = /** @class */ (function () {
                 if (next.data.role === 'vendor') {
                     return user.vendor !== null ? true : false;
                 }
+                if (next.data.role === 'free') {
+                    return true;
+                }
+            }
+            else {
+                if (next.data.role === 'free') {
+                    _this.userServices.setUser({});
+                    return true;
+                }
             }
             _this.router.navigate(['/login']);
             return false;
@@ -1096,10 +1107,14 @@ var AdminLayoutComponent = /** @class */ (function () {
             { path: '/admin', title: 'Dashboard', icon: 'ni ni-tv-2', class: '' },
             { path: '/admin/administrators', title: 'Administrators List', icon: 'ni ni-single-02', class: '' },
             { path: '/admin/vendors', title: 'Vendors List', icon: 'ni ni-single-02', class: '' },
-            { path: '/admin/roles', title: 'Administrators Roles', icon: 'ni ni-single-02', class: '' },
+            { path: '/admin/clients', title: 'Client List', icon: 'ni ni-single-02', class: '' },
+            // { path: '/admin/roles', title: 'Administrators Roles', icon: 'ni ni-single-02', class: '' },
             { path: '/admin/settings', title: 'Site Settings', icon: 'ni ni-settings-gear-65', class: '' },
+            { path: '/admin/requests', title: 'Requests', icon: 'fa fa-credit-card', class: '' },
+            { path: '/admin/requests-pending', title: 'Requests Pending', icon: 'fa fa-credit-card', class: '' },
             { path: '/admin/category', title: 'Categories', icon: 'ni ni-collection', class: '' },
             { path: '/admin/posts', title: 'Blog Post', icon: 'ni ni-laptop', class: '' },
+            { path: '/admin/comments', title: 'Comments', icon: 'fa fa-comments', class: '' },
             { path: '/admin/pins', title: 'Pins', icon: 'ni ni-pin-3', class: '' },
         ];
         this.layoutRoutes2 = [
@@ -1323,20 +1338,27 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 var ClientLayoutComponent = /** @class */ (function () {
     function ClientLayoutComponent(clientLayoutService, userService) {
-        var _this = this;
         this.clientLayoutService = clientLayoutService;
         this.userService = userService;
         this.layoutRoutes = [
             { path: '/client', title: 'Dashboard', icon: 'ni ni-tv-2', class: '' },
+            { path: '/client/views', title: 'Post Views', icon: 'fa fa-eye', class: '' },
+            { path: '/client/comments', title: 'Comments', icon: 'fa fa-comments', class: '' },
+            { path: '/client/referred', title: 'Referred', icon: 'fa fa-eye', class: '' },
+            { path: '/client/request', title: 'Requests', icon: 'fa fa-credit-card', class: '' },
         ];
         this.layoutRoutes2 = [
             { path: '/client/profile', title: 'Profile', icon: 'ni ni-single-02', class: '' },
         ];
+        this.getClient();
+    }
+    ClientLayoutComponent.prototype.ngOnInit = function () {
+    };
+    ClientLayoutComponent.prototype.getClient = function () {
+        var _this = this;
         this.userService.getClient(this.userService.current.value.id).subscribe(function (data) {
             _this.clientLayoutService.client.next(data.data);
         });
-    }
-    ClientLayoutComponent.prototype.ngOnInit = function () {
     };
     ClientLayoutComponent.ctorParameters = function () { return [
         { type: _client_layout_service__WEBPACK_IMPORTED_MODULE_1__["ClientLayoutService"] },
@@ -1605,6 +1627,54 @@ var SettingService = /** @class */ (function () {
     SettingService.prototype.deletePost = function (id) {
         return this.http.delete("/api/post/" + id);
     };
+    SettingService.prototype.createComment = function (data) {
+        return this.http.post("/api/comment", data);
+    };
+    SettingService.prototype.getComments = function () {
+        return this.http.get("/api/comment");
+    };
+    SettingService.prototype.getComment = function (id) {
+        return this.http.get("/api/comment/" + id);
+    };
+    SettingService.prototype.getPostComments = function (id) {
+        return this.http.get("/api/post/" + id + "/comments");
+    };
+    SettingService.prototype.getClientComments = function (id) {
+        return this.http.get("/api/client/" + id + "/comments");
+    };
+    SettingService.prototype.deleteComment = function (id) {
+        return this.http.delete("/api/comment/" + id);
+    };
+    SettingService.prototype.validComment = function (id) {
+        return this.http.put("/api/comment/" + id, {});
+    };
+    SettingService.prototype.getAllPostViews = function () {
+        return this.http.get("/api/post_views");
+    };
+    SettingService.prototype.getClientPostViews = function (id) {
+        return this.http.get("/api/client/" + id + "/post_views");
+    };
+    SettingService.prototype.getPostViews = function (id) {
+        return this.http.get("/api/post/" + id + "/post_views");
+    };
+    SettingService.prototype.makeRequest = function (data, type) {
+        return this.http.post("/api/request/" + type, data);
+    };
+    SettingService.prototype.getRequests = function () {
+        return this.http.get("/api/request");
+    };
+    SettingService.prototype.updateRequest = function (id, type) {
+        return this.http.get("/api/request/" + id + "/" + type);
+    };
+    SettingService.prototype.getConfirmedRequests = function () {
+        return this.http.get("/api/request/confirmed");
+    };
+    SettingService.prototype.getUnConfirmedRequests = function () {
+        return this.http.get("/api/request/unconfirmed");
+    };
+    SettingService.prototype.getClientRequests = function (id) {
+        return this.http.get("/api/client/" + id + "/request");
+    };
     SettingService.ctorParameters = function () { return [
         { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"] }
     ]; };
@@ -1737,6 +1807,9 @@ var UserService = /** @class */ (function () {
     UserService.prototype.getAdministrator = function (id) {
         return this.http.get("/api/admin/" + id);
     };
+    UserService.prototype.toggleUserBlockState = function (id) {
+        return this.http.get("/api/user/" + id);
+    };
     UserService.prototype.getAdministrators = function () {
         return this.http.get("/api/admin");
     };
@@ -1787,6 +1860,9 @@ var UserService = /** @class */ (function () {
     };
     UserService.prototype.getClients = function () {
         return this.http.get("/api/client");
+    };
+    UserService.prototype.getReferredClients = function (id) {
+        return this.http.get("/api/client/" + id + "/referred");
     };
     UserService.prototype.updateClient = function (id, data) {
         return this.http.put("/api/client/" + id, data);

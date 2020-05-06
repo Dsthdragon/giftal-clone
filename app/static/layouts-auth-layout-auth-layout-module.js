@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid mt--7\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-12 col-md-6\">\n            <app-post-box *ngFor=\"let post of posts | paginate:{itemsPerPage: 6, currentPage:p}\" [post]='post'></app-post-box>\n            <div class=\"card\">\n                <div class=\"card-footer py-1\">\n                    <app-simple-pagination-controls (pageChange)=\"p=$event\"></app-simple-pagination-controls>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-12 col-md-4\">\n\n        </div>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid mt--7\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-12 col-md-6\">\n            <app-post-box *ngFor=\"let post of posts | paginate:{itemsPerPage: pageSize, currentPage:p}\" [post]='post'></app-post-box>\n            <div class=\"card\">\n                <div class=\"card-footer py-1\">\n                    <app-simple-pagination-controls (pageChange)=\"p=$event\"></app-simple-pagination-controls>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-12 col-md-4\">\n\n        </div>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -35,7 +35,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid mt--7\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-12 col-md-6\">\n            <app-post-box *ngFor=\"let post of posts | paginate:{itemsPerPage: 6, currentPage:p}\" [post]='post'></app-post-box>\n            <div class=\"card\">\n                <div class=\"card-footer py-1\">\n                    <app-simple-pagination-controls (pageChange)=\"p=$event\"></app-simple-pagination-controls>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-12 col-md-4\">\n\n        </div>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid mt--7\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-12 col-md-6\">\n            <app-post-box *ngFor=\"let post of posts | paginate:{itemsPerPage: pageSize, currentPage:p}\" [post]='post'></app-post-box>\n            <div class=\"card\">\n                <div class=\"card-footer py-1\">\n                    <app-simple-pagination-controls (pageChange)=\"p=$event\"></app-simple-pagination-controls>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-12 col-md-4\">\n\n        </div>\n    </div>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/layouts/auth-layout/pages/how-it-works/how-it-works.component.html":
+/*!**************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/layouts/auth-layout/pages/how-it-works/how-it-works.component.html ***!
+  \**************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid mt--7\">\n    <div class=\"row justify-content-center\">\n        <div>\n            <div class=\"card shadow\">\n                <div class=\"card-header\">\n                    <div>\n                        <label class=\"form-control-label\">\n                            Point To Naira Rate (\n                            {{ settings.point_rate * 10000 | number }} Points =\n                            <span [innerHTML]='\"&#8358;\"'></span> {{ 10000 | number }}\n                            )\n                        </label>\n                    </div>\n                </div>\n                <div class=\"card-body\">\n\n                    <table class=\"table align-items-center table-flush\">\n                        <thead class=\"thead-light\">\n                            <tr>\n                                <th scope=\"col\">Sign up bonus</th>\n                                <td scope=\"col\">{{settings.sign_up_bonus | number  }} Points</td>\n                                <th scope=\"col\">Reading Post</th>\n                                <td scope=\"col\">{{settings.read_news | number  }} Points</td>\n                            </tr>\n                            <tr>\n                                <th scope=\"col\">Valid Comment</th>\n                                <td scope=\"col\">{{settings.comment | number  }} Points</td>\n                                <th scope=\"col\">Daily Login Bonus</th>\n                                <td scope=\"col\"> {{settings.login_bonus | number  }} Points</td>\n                            </tr>\n                            <tr>\n                                <th scope=\"col\">Confirm Payment Bonus</th>\n                                <td scope=\"col\">{{settings.testimonies_bonus | number  }} Points</td>\n                                <td scope=\"col\"></td>\n                                <td scope=\"col\"></td>\n                            </tr>\n                            <tr>\n                                <th scope=\"col\">Referral Bonus </th>\n                                <td scope=\"col\"><span [innerHTML]='\"&#8358;\"'></span>\n                                    {{settings.referral_bonus | number  }}</td>\n                                <th scope=\"col\">Sign Up Fee</th>\n                                <td scope=\"col\"><span [innerHTML]='\"&#8358;\"'></span>\n                                    {{settings.sign_up_fee | number  }}</td>\n                            </tr>\n                            <tr>\n                                <th scope=\"col\">Minimun Withdrawal Limit</th>\n                                <td scope=\"col\"><span [innerHTML]='\"&#8358;\"'></span>\n                                    {{settings.min_withdrawal_limit | number  }}</td>\n                                <th scope=\"col\">Maximun Withdrawal Limit </th>\n                                <td scope=\"col\"><span [innerHTML]='\"&#8358;\"'></span>\n                                    {{settings.max_withdrawal_limit | number  }}</td>\n                            </tr>\n                        </thead>\n                    </table>\n                    <!-- <div class=\"row\"> -->\n                        <!-- <div class=\"col-lg-6\">\n                            <div>\n                                <label class=\"form-control-label\">\n                                    Sharing news on site\n                                    ( {{settings.share_news | number  }} Points)\n                                </label>\n                            </div>\n                        </div> -->\n                        <!-- <div class=\"col-lg-6\">\n                            <div>\n                                <label class=\"form-control-label\">\n                                    Share Daily Sponsored Posted\n                                    ( {{settings.share_daily_sponsored | number  }} Points)\n                                </label>\n                            </div>\n                        </div> -->\n                        <!-- <div class=\"col-lg-6\">\n                            <div>\n                                <label class=\"form-control-label\">\n                                    Share Daily Compaign Advert\n                                    ( {{settings.share_daily_advert | number  }} Points)\n                                </label>\n                            </div>\n                        </div> -->\n                    <!-- </div> -->\n                </div>\n            </div>\n        </div>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -52,6 +65,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/layouts/auth-layout/pages/payroll/payroll.component.html":
+/*!****************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/layouts/auth-layout/pages/payroll/payroll.component.html ***!
+  \****************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid mt--7\">\n    <div class=\"row justify-content-center\">\n        <div>\n            \n            <div class=\"card shadow\">\n                <div class=\"table-responsive\">\n                    <table class=\"table align-items-center table-flush\">\n                        <thead class=\"thead-light\">\n                            <tr>\n                                <th scope=\"col\">Amount</th>\n                                <th scope=\"col\">Client</th>\n                                <th scope=\"col\">Bank</th>\n                                <th scope=\"col\">Confirmed</th>\n                                <th scope=\"col\">Date</th>\n                            </tr>\n                        </thead>\n                        <tbody>\n                            <tr\n                                *ngFor=\"let request of requests | paginate:{itemsPerPage: pageSize, currentPage:p} let i = index \">\n                                <td>\n                                    <span [innerHTML]='\"&#8358;\"'></span>\n                                    {{ request.amount | number }}\n                                </td>\n                                <td>\n                                    {{ request.client.first_name }}\n                                    {{ request.client.last_name }}\n                                </td>\n                                <td>\n                                    {{ request.client.bank }}\n                                </td>\n                                <td>\n                                    <span class=\"badge {{ request.confirmed ? 'badge-success': 'badge-warning' }}\">\n                                        {{ request.confirmed ? 'Confirmed': 'Pending' }}\n                                    </span>\n                                </td>\n                                <td>\n                                    {{ request.created | date : 'mediumDate' }}\n                                </td>\n                            </tr>\n                        </tbody>\n                    </table>\n                </div>\n                <div class=\"card-footer py-4\">\n                    <app-pagination-controls (pageChange)=\"p=$event\"></app-pagination-controls>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/layouts/auth-layout/pages/post/post.component.html":
 /*!**********************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/layouts/auth-layout/pages/post/post.component.html ***!
@@ -61,7 +87,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid mt--7\">\n    <div class=\"row justify-content-center\">\n        <div class=\"col-12 col-md-8\" *ngIf=\"post\">\n\n            <div class=\"card bg-secondary shadow border-0\">\n                <div class=\"card-body px-lg-5 py-lg-5\">\n                    <div class=\"row justify-content-center\">\n                        <div class=\"col-12 col-md-8 col-lg-6\">\n                            <img [src]=\"post.image_url\" class=\"img-fluid\">\n                        </div>\n                    </div>\n                    <hr />\n                    <div class=\"row\">\n                        <div class=\"col-12  text-right\">\n                            <label class=\"badge badge-primary mr-5\" *ngIf='post.is_sponsored'>SPONSORED</label>\n                            <a [routerLink]='[\"/category\", post.category.id, post.category.title ]' class=\"badge badge-default\">{{ post.category.title}}</a>\n                        </div>\n                    </div>\n                    <div>\n                        <h2>\n                            {{ post.title }}\n                        </h2>\n                        <h5>\n                            <span class=\"fa fa-clock\"></span> \n                            {{ post.created | date : 'mediumDate' }}\n                        </h5>\n                    </div>\n                    <div [innerHtml]='post.content'>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container-fluid mt--7\">\n    <div class=\"row justify-content-center\" *ngIf=\"post\">\n        <div class=\"col-12 col-md-7\">\n\n            <div class=\"card bg-secondary shadow border-0\">\n                <div class=\"card-body px-lg-5 py-lg-5\">\n                    <div class=\"row justify-content-center\">\n                        <div class=\"col-12 col-md-8 col-lg-6\">\n                            <img [src]=\"post.image_url\" class=\"img-fluid\">\n                        </div>\n                    </div>\n                    <hr />\n                    <div class=\"row\">\n                        <div class=\"col-12  text-right\">\n                            <label class=\"badge badge-primary mr-5\" *ngIf='post.is_sponsored'>SPONSORED</label>\n                            <a [routerLink]='[\"/category\", post.category.id, post.category.title ]'\n                                class=\"badge badge-default\">{{ post.category.title}}</a>\n                        </div>\n                    </div>\n                    <div>\n                        <h2>\n                            {{ post.title }}\n                        </h2>\n                        <h5>\n                            <span class=\"fa fa-clock\"></span>\n                            {{ post.created | date : 'mediumDate' }}\n                        </h5>\n                    </div>\n                    <div [innerHtml]='post.content'>\n                    </div>\n                </div>\n            </div>\n\n        </div>\n        <div class=\"col-12 col-md-4\">\n            <div class=\"card bg-secondary\">\n\n                <div class=\"card-header\" *ngIf='userService.type.value === \"client\" else notLoggedIN'>\n                    <form id=\"postCommentForm\" #postCommentForm=\"ngForm\" (ngSubmit)=\"postComment()\">\n\n                        <div class=\"form-group\">\n                            <textarea form=\"postCommentForm\" [(ngModel)]='new_comment.comment' name=\"comment\"\n                                placeholder=\"Say SOmething\" class=\"form-control\" #comment=\"ngModel\"></textarea>\n\n                        </div>\n                        <div class=\"form-group\">\n                            <button class=\"btn btn-primary btn-block\" form=\"postCommentForm\" type=\"submit\"\n                                value=\"POST COMMENT\" [disabled]=\"!postCommentForm.form.valid\">\n                                POST COMMENT\n                            </button>\n                        </div>\n                    </form>\n                </div>\n                <ng-template #notLoggedIN>\n                    <div class=\"card-header\">\n                        <h3>LOGIN TO COMMENT</h3>\n                    </div>\n                </ng-template>\n                <div class=\"card-body\">\n                    <div *ngFor=\"let comment of comments | paginate:{itemsPerPage: pageSize, currentPage:p}\">\n                        <div>\n                            <div class=\"media align-items-center\">\n                                <span class=\"avatar avatar-sm rounded-circle\">\n                                    <img [src]=\"comment.client.image_url\" appImgFallback=\"avatar\">\n                                </span>\n                                <div class=\"media-body ml-2 d-none d-lg-block clearfix\">\n                                    <span class=\"mb-0 text-sm text-primary font-weight-bold\">\n                                        {{ comment.client.first_name }} {{ comment.client.last_name }}\n                                    </span><br />\n                                    <span class=\"text-sm  font-weight-light\">\n                                        {{ comment.created | date: \"short\" }}\n                                    </span>\n                                </div>\n                            </div>\n                            <div class=\"pt-2\">\n                                {{ comment.comment }}\n                            </div>\n                        </div>\n                        <hr />\n                    </div>\n                </div>\n                <div class=\"card-footer py-1\" *ngIf='comments.length > 0'>\n                    <app-pagination-controls (pageChange)=\"p=$event\"></app-pagination-controls>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -91,6 +117,32 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./src/app/constants.ts":
+/*!******************************!*\
+  !*** ./src/app/constants.ts ***!
+  \******************************/
+/*! exports provided: Constants */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Constants", function() { return Constants; });
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var Constants = /** @class */ (function () {
+    function Constants() {
+    }
+    Constants.PageSize = 5;
+    Constants.PostPerPage = 6;
+    Constants.CommentPerPage = 6;
+    return Constants;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/layouts/auth-layout/auth-layout.module.ts":
 /*!***********************************************************!*\
   !*** ./src/app/layouts/auth-layout/auth-layout.module.ts ***!
@@ -116,6 +168,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _component_post_box_post_box_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./component/post-box/post-box.component */ "./src/app/layouts/auth-layout/component/post-box/post-box.component.ts");
 /* harmony import */ var ngx_pagination__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-pagination */ "./node_modules/ngx-pagination/__ivy_ngcc__/dist/ngx-pagination.js");
 /* harmony import */ var src_app_components_components_module__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! src/app/components/components.module */ "./src/app/components/components.module.ts");
+/* harmony import */ var _pages_payroll_payroll_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./pages/payroll/payroll.component */ "./src/app/layouts/auth-layout/pages/payroll/payroll.component.ts");
+/* harmony import */ var _pages_how_it_works_how_it_works_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./pages/how-it-works/how-it-works.component */ "./src/app/layouts/auth-layout/pages/how-it-works/how-it-works.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -125,6 +179,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
   return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+
+
 
 
 
@@ -160,7 +216,9 @@ var AuthLayoutModule = /** @class */ (function () {
                 _pages_vendors_vendors_component__WEBPACK_IMPORTED_MODULE_9__["VendorsComponent"],
                 _pages_post_post_component__WEBPACK_IMPORTED_MODULE_10__["PostComponent"],
                 _pages_category_category_component__WEBPACK_IMPORTED_MODULE_11__["CategoryComponent"],
-                _component_post_box_post_box_component__WEBPACK_IMPORTED_MODULE_12__["PostBoxComponent"]
+                _component_post_box_post_box_component__WEBPACK_IMPORTED_MODULE_12__["PostBoxComponent"],
+                _pages_payroll_payroll_component__WEBPACK_IMPORTED_MODULE_15__["PayrollComponent"],
+                _pages_how_it_works_how_it_works_component__WEBPACK_IMPORTED_MODULE_16__["HowItWorksComponent"]
             ]
         })
     ], AuthLayoutModule);
@@ -187,9 +245,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _pages_vendors_vendors_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/vendors/vendors.component */ "./src/app/layouts/auth-layout/pages/vendors/vendors.component.ts");
 /* harmony import */ var _pages_category_category_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/category/category.component */ "./src/app/layouts/auth-layout/pages/category/category.component.ts");
 /* harmony import */ var _pages_post_post_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./pages/post/post.component */ "./src/app/layouts/auth-layout/pages/post/post.component.ts");
+/* harmony import */ var _pages_payroll_payroll_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./pages/payroll/payroll.component */ "./src/app/layouts/auth-layout/pages/payroll/payroll.component.ts");
+/* harmony import */ var _pages_how_it_works_how_it_works_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./pages/how-it-works/how-it-works.component */ "./src/app/layouts/auth-layout/pages/how-it-works/how-it-works.component.ts");
 var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
   return (mod && mod.__esModule) ? mod : { "default": mod };
 };
+
+
 
 
 
@@ -203,7 +265,9 @@ var AuthLayoutRoutes = [
     { path: 'register/:id', component: _pages_register_register_component__WEBPACK_IMPORTED_MODULE_1__["RegisterComponent"] },
     { path: 'category/:id/:title', component: _pages_category_category_component__WEBPACK_IMPORTED_MODULE_4__["CategoryComponent"] },
     { path: 'post/:id/:title', component: _pages_post_post_component__WEBPACK_IMPORTED_MODULE_5__["PostComponent"] },
-    { path: 'vendors', component: _pages_vendors_vendors_component__WEBPACK_IMPORTED_MODULE_3__["VendorsComponent"] }
+    { path: 'vendors', component: _pages_vendors_vendors_component__WEBPACK_IMPORTED_MODULE_3__["VendorsComponent"] },
+    { path: 'payroll', component: _pages_payroll_payroll_component__WEBPACK_IMPORTED_MODULE_6__["PayrollComponent"] },
+    { path: 'how-it-works', component: _pages_how_it_works_how_it_works_component__WEBPACK_IMPORTED_MODULE_7__["HowItWorksComponent"] },
 ];
 
 
@@ -299,6 +363,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services_setting_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/setting.service */ "./src/app/services/setting.service.ts");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/__ivy_ngcc__/fesm5/ngx-toastr.js");
 /* harmony import */ var _auth_layout_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../auth-layout.component */ "./src/app/layouts/auth-layout/auth-layout.component.ts");
+/* harmony import */ var src_app_constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/constants */ "./src/app/constants.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -317,6 +382,7 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
+
 var CategoryComponent = /** @class */ (function () {
     function CategoryComponent(route, userService, settingService, toastrService, authLayoutComponent) {
         var _this = this;
@@ -325,6 +391,8 @@ var CategoryComponent = /** @class */ (function () {
         this.settingService = settingService;
         this.toastrService = toastrService;
         this.authLayoutComponent = authLayoutComponent;
+        this.p = 1;
+        this.pageSize = src_app_constants__WEBPACK_IMPORTED_MODULE_6__["Constants"].PostPerPage;
         this.route.params.subscribe(function (params) {
             _this.settingService.getCategery(params.id).subscribe(function (data) {
                 _this.category = data.data;
@@ -394,6 +462,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
 /* harmony import */ var _auth_layout_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../auth-layout.component */ "./src/app/layouts/auth-layout/auth-layout.component.ts");
 /* harmony import */ var src_app_services_setting_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! src/app/services/setting.service */ "./src/app/services/setting.service.ts");
+/* harmony import */ var src_app_constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/constants */ "./src/app/constants.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -412,6 +481,7 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
+
 var HomeComponent = /** @class */ (function () {
     function HomeComponent(userService, toastrService, router, authLayoutComponent, settingService) {
         this.userService = userService;
@@ -420,6 +490,8 @@ var HomeComponent = /** @class */ (function () {
         this.authLayoutComponent = authLayoutComponent;
         this.settingService = settingService;
         this.posts = [];
+        this.p = 1;
+        this.pageSize = src_app_constants__WEBPACK_IMPORTED_MODULE_6__["Constants"].PostPerPage;
     }
     HomeComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -454,6 +526,83 @@ var HomeComponent = /** @class */ (function () {
             src_app_services_setting_service__WEBPACK_IMPORTED_MODULE_5__["SettingService"]])
     ], HomeComponent);
     return HomeComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/layouts/auth-layout/pages/how-it-works/how-it-works.component.css":
+/*!***********************************************************************************!*\
+  !*** ./src/app/layouts/auth-layout/pages/how-it-works/how-it-works.component.css ***!
+  \***********************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xheW91dHMvYXV0aC1sYXlvdXQvcGFnZXMvaG93LWl0LXdvcmtzL2hvdy1pdC13b3Jrcy5jb21wb25lbnQuY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/layouts/auth-layout/pages/how-it-works/how-it-works.component.ts":
+/*!**********************************************************************************!*\
+  !*** ./src/app/layouts/auth-layout/pages/how-it-works/how-it-works.component.ts ***!
+  \**********************************************************************************/
+/*! exports provided: HowItWorksComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HowItWorksComponent", function() { return HowItWorksComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _auth_layout_component__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../auth-layout.component */ "./src/app/layouts/auth-layout/auth-layout.component.ts");
+/* harmony import */ var src_app_services_setting_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/setting.service */ "./src/app/services/setting.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+var HowItWorksComponent = /** @class */ (function () {
+    function HowItWorksComponent(authLayoutComponent, settingService) {
+        var _this = this;
+        this.authLayoutComponent = authLayoutComponent;
+        this.settingService = settingService;
+        this.settings = {};
+        this.settingService.getSettings().subscribe(function (data) {
+            _this.settings = data.data;
+        });
+    }
+    HowItWorksComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        setTimeout(function () {
+            return _this.authLayoutComponent.setPageTitle('How It Works', 'Learn How To Start Earning With Us');
+        }, 100);
+    };
+    HowItWorksComponent.ctorParameters = function () { return [
+        { type: _auth_layout_component__WEBPACK_IMPORTED_MODULE_1__["AuthLayoutComponent"] },
+        { type: src_app_services_setting_service__WEBPACK_IMPORTED_MODULE_2__["SettingService"] }
+    ]; };
+    HowItWorksComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-how-it-works',
+            template: __importDefault(__webpack_require__(/*! raw-loader!./how-it-works.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/layouts/auth-layout/pages/how-it-works/how-it-works.component.html")).default,
+            styles: [__importDefault(__webpack_require__(/*! ./how-it-works.component.css */ "./src/app/layouts/auth-layout/pages/how-it-works/how-it-works.component.css")).default]
+        }),
+        __metadata("design:paramtypes", [_auth_layout_component__WEBPACK_IMPORTED_MODULE_1__["AuthLayoutComponent"],
+            src_app_services_setting_service__WEBPACK_IMPORTED_MODULE_2__["SettingService"]])
+    ], HowItWorksComponent);
+    return HowItWorksComponent;
 }());
 
 
@@ -562,6 +711,87 @@ var LoginComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/layouts/auth-layout/pages/payroll/payroll.component.css":
+/*!*************************************************************************!*\
+  !*** ./src/app/layouts/auth-layout/pages/payroll/payroll.component.css ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xheW91dHMvYXV0aC1sYXlvdXQvcGFnZXMvcGF5cm9sbC9wYXlyb2xsLmNvbXBvbmVudC5jc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/layouts/auth-layout/pages/payroll/payroll.component.ts":
+/*!************************************************************************!*\
+  !*** ./src/app/layouts/auth-layout/pages/payroll/payroll.component.ts ***!
+  \************************************************************************/
+/*! exports provided: PayrollComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PayrollComponent", function() { return PayrollComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var src_app_constants__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! src/app/constants */ "./src/app/constants.ts");
+/* harmony import */ var _auth_layout_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../auth-layout.component */ "./src/app/layouts/auth-layout/auth-layout.component.ts");
+/* harmony import */ var src_app_services_setting_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/setting.service */ "./src/app/services/setting.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+
+var PayrollComponent = /** @class */ (function () {
+    function PayrollComponent(authLayoutComponent, settingService) {
+        var _this = this;
+        this.authLayoutComponent = authLayoutComponent;
+        this.settingService = settingService;
+        this.p = 1;
+        this.pageSize = src_app_constants__WEBPACK_IMPORTED_MODULE_1__["Constants"].PageSize;
+        this.requests = [];
+        this.settingService.getRequests().subscribe(function (data) {
+            _this.requests = data.data;
+        });
+    }
+    PayrollComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        setTimeout(function () {
+            return _this.authLayoutComponent.setPageTitle('Payroll', 'Join and Start getting Paid');
+        }, 100);
+    };
+    PayrollComponent.ctorParameters = function () { return [
+        { type: _auth_layout_component__WEBPACK_IMPORTED_MODULE_2__["AuthLayoutComponent"] },
+        { type: src_app_services_setting_service__WEBPACK_IMPORTED_MODULE_3__["SettingService"] }
+    ]; };
+    PayrollComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-payroll',
+            template: __importDefault(__webpack_require__(/*! raw-loader!./payroll.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/layouts/auth-layout/pages/payroll/payroll.component.html")).default,
+            styles: [__importDefault(__webpack_require__(/*! ./payroll.component.css */ "./src/app/layouts/auth-layout/pages/payroll/payroll.component.css")).default]
+        }),
+        __metadata("design:paramtypes", [_auth_layout_component__WEBPACK_IMPORTED_MODULE_2__["AuthLayoutComponent"],
+            src_app_services_setting_service__WEBPACK_IMPORTED_MODULE_3__["SettingService"]])
+    ], PayrollComponent);
+    return PayrollComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/layouts/auth-layout/pages/post/post.component.css":
 /*!*******************************************************************!*\
   !*** ./src/app/layouts/auth-layout/pages/post/post.component.css ***!
@@ -591,6 +821,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var src_app_services_setting_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/setting.service */ "./src/app/services/setting.service.ts");
 /* harmony import */ var ngx_toastr__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-toastr */ "./node_modules/ngx-toastr/__ivy_ngcc__/fesm5/ngx-toastr.js");
 /* harmony import */ var _auth_layout_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../auth-layout.component */ "./src/app/layouts/auth-layout/auth-layout.component.ts");
+/* harmony import */ var src_app_constants__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! src/app/constants */ "./src/app/constants.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -609,6 +840,7 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
+
 var PostComponent = /** @class */ (function () {
     // posts: any;
     function PostComponent(route, userService, settingService, toastrService, authLayoutComponent) {
@@ -618,6 +850,13 @@ var PostComponent = /** @class */ (function () {
         this.settingService = settingService;
         this.toastrService = toastrService;
         this.authLayoutComponent = authLayoutComponent;
+        this.new_comment = {
+            post_id: 0,
+            comment: ''
+        };
+        this.p = 1;
+        this.pageSize = src_app_constants__WEBPACK_IMPORTED_MODULE_6__["Constants"].CommentPerPage;
+        this.comments = [];
         this.route.params.subscribe(function (params) {
             _this.settingService.getPost(params.id).subscribe(function (data) {
                 _this.post = data.data;
@@ -625,9 +864,29 @@ var PostComponent = /** @class */ (function () {
                     return _this.authLayoutComponent.setPageTitle(_this.post.title, _this.post.abstract);
                 }, 100);
             });
+            _this.settingService.getPostComments(params.id).subscribe(function (data) {
+                _this.comments = data.data;
+            });
         });
     }
     PostComponent.prototype.ngOnInit = function () {
+    };
+    PostComponent.prototype.postComment = function () {
+        var _this = this;
+        this.new_comment.post_id = this.post.id;
+        this.settingService.createComment(this.new_comment).subscribe(function (data) {
+            if (data.status === 'success') {
+                _this.new_comment = {
+                    post_id: 0,
+                    comment: ''
+                };
+                _this.comments.unshift(data.data);
+                _this.toastrService.success(data.message);
+            }
+            else {
+                _this.toastrService.error(data.message);
+            }
+        });
     };
     PostComponent.ctorParameters = function () { return [
         { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["ActivatedRoute"] },

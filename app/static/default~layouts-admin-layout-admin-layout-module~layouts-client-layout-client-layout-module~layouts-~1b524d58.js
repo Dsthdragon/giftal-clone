@@ -1164,6 +1164,32 @@ var WINDOW = new _angular_core__WEBPACK_IMPORTED_MODULE_0__["InjectionToken"]('W
 
 //# sourceMappingURL=ngx-window-token.js.map
 
+/***/ }),
+
+/***/ "./src/app/constants.ts":
+/*!******************************!*\
+  !*** ./src/app/constants.ts ***!
+  \******************************/
+/*! exports provided: Constants */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Constants", function() { return Constants; });
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var Constants = /** @class */ (function () {
+    function Constants() {
+    }
+    Constants.PageSize = 5;
+    Constants.PostPerPage = 6;
+    Constants.CommentPerPage = 6;
+    return Constants;
+}());
+
+
+
 /***/ })
 
 }]);
