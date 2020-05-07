@@ -162,20 +162,23 @@ def get_post(post_id):
     post = Post.query.get(post_id)
     if not post:
         return jsonify(status="failed", message='Post Not Found')
-    client = User.current().client
-    if client and client.pin:
-        post_view = PostView.query.filter_by(client_id=client.id, post_id=post_id).first()
-        if not post_view:
-            setting = Setting.query.first()
-            activity = Activity(client_id=client.id)
-            db.session.add(activity)
-            post_view = PostView()
-            post_view.client_id=client.id
-            post_view.activity = activity
-            post_view.post_id = post_id
-            client.royalty_wallet += setting.read_news
-            db.session.add(post_view)
-            db.session.commit()
+
+    user = User.current()
+    if user:
+        client = user.client
+        if client and client.pin:
+            post_view = PostView.query.filter_by(client_id=client.id, post_id=post_id).first()
+            if not post_view:
+                setting = Setting.query.first()
+                activity = Activity(client_id=client.id)
+                db.session.add(activity)
+                post_view = PostView()
+                post_view.client_id=client.id
+                post_view.activity = activity
+                post_view.post_id = post_id
+                client.royalty_wallet += setting.read_news
+                db.session.add(post_view)
+                db.session.commit()
 
     return jsonify(
         status="success",
@@ -360,4 +363,29 @@ def get_post_views(post_id):
         message='Post Views Found',
         data=PostViewSchema(many=True).dump(post_views)
     )
+
+
+@bp.route("/post/<int:post_id>/share")
+def share_post(post_id):
+    post = Post.query.get(post_id)
+    if not post:
+        return jsonify(status="failed", message='Post Not Found')
+    user = User.current()
+    if user:
+        client = user.client
+        if client and client.pin:
+            post_share = PostShare.query.filter_by(client_id=client.id, post_id=post_id).first()
+            if not post_share:
+                setting = Setting.query.first()
+                activity = Activity(client_id=client.id)
+                db.session.add(activity)
+                post_share = PostShare()
+                post_share.client_id=client.id
+                post_share.activity = activity
+                post_share.post_id = post_id
+                client.royalty_wallet += setting.share_daily_sponsored if post.is_sponsored else setting.share_news
+                db.session.add(post_share)
+                db.session.commit()
+
+    return jsonify(status='success', message='Post Shared')
 

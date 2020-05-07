@@ -61,7 +61,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-vertical navbar-expand-md navbar-light bg-white\" id=\"sidenav-main\">\n  <div class=\"container-fluid\">\n    <!-- Toggler -->\n    <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed=!isCollapsed\"\n       aria-controls=\"sidenav-collapse-main\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <!-- Brand -->\n    <a class=\"navbar-brand pt-0\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n      <img src=\"./assets/img/brand/red.png\" class=\"navbar-brand-img\" alt=\"...\">\n    </a>\n    <!-- User -->\n    <ul class=\"nav align-items-center d-md-none\">\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link nav-link-icon\" role=\"button\" ngbDropdownToggle>\n          <i class=\"ni ni-bell-55\"></i>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Action</a>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Another action</a>\n          <div class=\"dropdown-divider\"></div>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Something else here</a>\n        </div>\n      </li>\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img alt=\"Image placeholder\" src=\"./assets/img/theme/team-1-800x800.jpg\">\n            </span>\n          </div>\n        </a>\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-single-02\"></i>\n            <span>My profile</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-settings-gear-65\"></i>\n            <span>Settings</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-calendar-grid-58\"></i>\n            <span>Activity</span>\n          </a>\n          <a routerLinkActive=\"active\" [routerLink]=\"['/user-profile']\" class=\"dropdown-item\">\n            <i class=\"ni ni-support-16\"></i>\n            <span>Support</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <a href=\"#!\" class=\"dropdown-item\">\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </a>\n        </div>\n      </li>\n    </ul>\n    <!-- Collapse -->\n    <div class=\"collapse navbar-collapse\"  [ngbCollapse]=\"isCollapsed\" id=\"sidenav-collapse-main\">\n      <!-- Collapse header -->\n      <div class=\"navbar-collapse-header d-md-none\">\n        <div class=\"row\">\n          <div class=\"col-6 collapse-brand\">\n            <a  routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n              <img src=\"./assets/img/brand/blue.png\">\n            </a>\n          </div>\n          <div class=\"col-6 collapse-close\">\n            <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed=!isCollapsed\">\n              <span></span>\n              <span></span>\n            </button>\n          </div>\n        </div>\n      </div>\n      <!-- Form -->\n      <form class=\"mt-4 mb-3 d-md-none\">\n        <div class=\"input-group input-group-rounded input-group-merge\">\n          <input type=\"search\" class=\"form-control form-control-rounded form-control-prepended\" placeholder=\"Search\" aria-label=\"Search\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\">\n              <span class=\"fa fa-search\"></span>\n            </div>\n          </div>\n        </div>\n      </form>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav\">\n          <li *ngFor=\"let menuItem of menuItems\" class=\"{{menuItem.class}} nav-item\">\n              <a routerLinkActive=\"active\" [routerLink]=\"[menuItem.path]\" class=\"nav-link\">\n                  <i class=\"{{menuItem.icon}}\"></i>\n                  {{menuItem.title}}\n              </a>\n          </li>\n      </ul>\n      <!-- Divider -->\n      <hr class=\"my-3\">\n      <!-- Heading -->\n      <h6 class=\"navbar-heading text-muted\">Documentation</h6>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav mb-md-3\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" routerLink=\"/\">\n            <i class=\"fa fa-home\"></i> MAIN SITE\n          </a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<nav class=\"navbar navbar-vertical navbar-expand-md navbar-light bg-white\" id=\"sidenav-main\">\n  <div class=\"container-fluid\">\n    <!-- Toggler -->\n    <button class=\"navbar-toggler\" type=\"button\" (click)=\"isCollapsed=!isCollapsed\"\n      aria-controls=\"sidenav-collapse-main\">\n      <span class=\"navbar-toggler-icon\"></span>\n    </button>\n    <!-- Brand -->\n    <a class=\"navbar-brand pt-0\" routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n      <img src=\"./assets/img/brand/red.png\" class=\"navbar-brand-img\" alt=\"...\">\n    </a>\n    <!-- User -->\n    <ul class=\"nav align-items-center d-md-none\">\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Action</a>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Another action</a>\n          <div class=\"dropdown-divider\"></div>\n          <a class=\"dropdown-item\" href=\"javascript:void(0)\">Something else here</a>\n        </div>\n      </li>\n      <li class=\"nav-item\" ngbDropdown placement=\"bottom-right\">\n        <a class=\"nav-link\" role=\"button\" ngbDropdownToggle>\n          <div class=\"media align-items-center\">\n            <span class=\"avatar avatar-sm rounded-circle\">\n              <img [src]=\"user.image_url\" appImgFallback=\"avatar\">\n            </span>\n            <div class=\"media-body ml-2 d-none d-lg-block\">\n              <span class=\"mb-0 text-sm  font-weight-bold\">{{ user.first_name }} {{ user.last_name }}</span>\n            </div>\n          </div>\n        </a>\n\n        <div class=\"dropdown-menu-arrow dropdown-menu-right\" ngbDropdownMenu>\n          <div class=\" dropdown-header noti-title\">\n            <h6 class=\"text-overflow m-0\">Welcome!</h6>\n          </div>\n\n          <a *ngFor=\"let dropDownItem of shortItems\" routerLinkActive=\"active\" [routerLink]=\"[dropDownItem.path]\"\n            class=\"dropdown-item\">\n            <i class=\"{{ dropDownItem.icon }}\"></i>\n            <span>{{ dropDownItem.title }}</span>\n          </a>\n          <div class=\"dropdown-divider\"></div>\n          <span class=\"dropdown-item\" (click)='logout()'>\n            <i class=\"ni ni-user-run\"></i>\n            <span>Logout</span>\n          </span>\n        </div>\n      </li>\n    </ul>\n    <!-- Collapse -->\n    <div class=\"collapse navbar-collapse\" [ngbCollapse]=\"isCollapsed\" id=\"sidenav-collapse-main\">\n      <!-- Collapse header -->\n      <div class=\"navbar-collapse-header d-md-none\">\n        <div class=\"row\">\n          <div class=\"col-6 collapse-brand\">\n            <a routerLinkActive=\"active\" [routerLink]=\"['/dashboard']\">\n              <img src=\"./assets/img/brand/blue.png\">\n            </a>\n          </div>\n          <div class=\"col-6 collapse-close\">\n            <button type=\"button\" class=\"navbar-toggler\" (click)=\"isCollapsed=!isCollapsed\">\n              <span></span>\n              <span></span>\n            </button>\n          </div>\n        </div>\n      </div>\n      <!-- Form -->\n      <form class=\"mt-4 mb-3 d-md-none\">\n        <div class=\"input-group input-group-rounded input-group-merge\">\n          <input type=\"search\" class=\"form-control form-control-rounded form-control-prepended\" placeholder=\"Search\"\n            aria-label=\"Search\">\n          <div class=\"input-group-prepend\">\n            <div class=\"input-group-text\">\n              <span class=\"fa fa-search\"></span>\n            </div>\n          </div>\n        </div>\n      </form>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav\">\n        <li *ngFor=\"let menuItem of menuItems\" class=\"{{menuItem.class}} nav-item\">\n          <a routerLinkActive=\"active\" [routerLink]=\"[menuItem.path]\" class=\"nav-link\">\n            <i class=\"{{menuItem.icon}}\"></i>\n            {{menuItem.title}}\n          </a>\n        </li>\n      </ul>\n      <!-- Divider -->\n      <hr class=\"my-3\">\n      <!-- Heading -->\n      <h6 class=\"navbar-heading text-muted\">Documentation</h6>\n      <!-- Navigation -->\n      <ul class=\"navbar-nav mb-md-3\">\n        <li class=\"nav-item\">\n          <a class=\"nav-link\" routerLink=\"/\">\n            <i class=\"fa fa-home\"></i> MAIN SITE\n          </a>\n        </li>\n      </ul>\n    </div>\n  </div>\n</nav>");
 
 /***/ }),
 
@@ -87,7 +87,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Sidenav -->\n<app-sidebar [menuItems]='layoutRoutes'></app-sidebar>\n<div class=\"main-content\">\n  <!-- Top navbar -->\n  <app-navbar [dropDownItems]='layoutRoutes2' [pageTitle]='adminLayoutService.pageTitle'></app-navbar>\n  <!-- Pages -->\n  <router-outlet></router-outlet>\n  <div class=\"container-fluid\">\n    <app-footer></app-footer>\n  </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Sidenav -->\n<app-sidebar [menuItems]='layoutRoutes' [shortItems]='layoutRoutes2'></app-sidebar>\n<div class=\"main-content\">\n  <!-- Top navbar -->\n  <app-navbar [dropDownItems]='layoutRoutes2' [pageTitle]='adminLayoutService.pageTitle'></app-navbar>\n  <!-- Pages -->\n  <router-outlet></router-outlet>\n  <div class=\"container-fluid\">\n    <app-footer></app-footer>\n  </div>\n</div>");
 
 /***/ }),
 
@@ -113,7 +113,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Sidenav -->\n<app-sidebar [menuItems]='layoutRoutes'></app-sidebar>\n<div class=\"main-content\">\n    <!-- Top navbar -->\n    <app-navbar [dropDownItems]='layoutRoutes2' [pageTitle]='clientLayoutService.pageTitle'></app-navbar>\n    <!-- Pages -->\n    <div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n        <div class=\"container-fluid\">\n            <div class=\"header-body\">\n                <!-- Card stats -->\n                <div>\n                    <h1 class=\"text-white\">\n                        \n                    </h1>\n                </div>\n            </div>\n        </div>\n    </div>\n    <!-- Page content -->\n    \n    \n    <div *ngIf=\"clientLayoutService.client.value  && clientLayoutService.client.value.pin else noPin\">\n        <router-outlet></router-outlet>\n    </div>\n    \n    <ng-template #noPin>\n        <app-activate-pin></app-activate-pin>\n    </ng-template>\n    <div class=\"container-fluid\">\n        <app-footer></app-footer>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Sidenav -->\n<app-sidebar [menuItems]='layoutRoutes' [shortItems]='layoutRoutes2'></app-sidebar>\n<div class=\"main-content\">\n    <!-- Top navbar -->\n    <app-navbar [dropDownItems]='layoutRoutes2' [pageTitle]='clientLayoutService.pageTitle'></app-navbar>\n    <!-- Pages -->\n    <div class=\"header bg-gradient-danger pb-8 pt-5 pt-md-8\">\n        <div class=\"container-fluid\">\n            <div class=\"header-body\">\n                <!-- Card stats -->\n                <div>\n                    <h1 class=\"text-white\">\n                        \n                    </h1>\n                </div>\n            </div>\n        </div>\n    </div>\n    <!-- Page content -->\n    \n    \n    <div *ngIf=\"clientLayoutService.client.value  && clientLayoutService.client.value.pin else noPin\">\n        <router-outlet></router-outlet>\n    </div>\n    \n    <ng-template #noPin>\n        <app-activate-pin></app-activate-pin>\n    </ng-template>\n    <div class=\"container-fluid\">\n        <app-footer></app-footer>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -126,7 +126,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!-- Sidenav -->\n<app-sidebar [menuItems]='layoutRoutes'></app-sidebar>\n<div class=\"main-content\">\n    <!-- Top navbar -->\n    <app-navbar [dropDownItems]='layoutRoutes2' [pageTitle]='vendorLayoutService.pageTitle'></app-navbar>\n    <!-- Pages -->\n    <router-outlet></router-outlet>\n    <div class=\"container-fluid\">\n        <app-footer></app-footer>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!-- Sidenav -->\n<app-sidebar [menuItems]='layoutRoutes' [shortItems]='layoutRoutes2'></app-sidebar>\n<div class=\"main-content\">\n    <!-- Top navbar -->\n    <app-navbar [dropDownItems]='layoutRoutes2' [pageTitle]='vendorLayoutService.pageTitle'></app-navbar>\n    <!-- Pages -->\n    <router-outlet></router-outlet>\n    <div class=\"container-fluid\">\n        <app-footer></app-footer>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -294,7 +294,7 @@ var AppModule = /** @class */ (function () {
                 _angular_router__WEBPACK_IMPORTED_MODULE_4__["RouterModule"],
                 _app_routing__WEBPACK_IMPORTED_MODULE_9__["AppRoutingModule"],
                 _directives_directives_module__WEBPACK_IMPORTED_MODULE_13__["DirectivesModule"],
-                ngx_toastr__WEBPACK_IMPORTED_MODULE_11__["ToastrModule"].forRoot({ timeOut: 5000, positionClass: 'toast-bottom-right' })
+                ngx_toastr__WEBPACK_IMPORTED_MODULE_11__["ToastrModule"].forRoot({ timeOut: 5000, positionClass: 'toast-bottom-right' }),
             ],
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"],
@@ -741,6 +741,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SidebarComponent", function() { return SidebarComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/__ivy_ngcc__/fesm5/router.js");
+/* harmony import */ var src_app_services_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/user.service */ "./src/app/services/user.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -755,6 +756,7 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 };
 
 
+
 var ROUTES = [
     { path: '/dashboard', title: 'Dashboard', icon: 'ni-tv-2 text-primary', class: '' },
     { path: '/icons', title: 'Icons', icon: 'ni-planet text-blue', class: '' },
@@ -765,9 +767,14 @@ var ROUTES = [
     { path: '/register', title: 'Register', icon: 'ni-circle-08 text-pink', class: '' }
 ];
 var SidebarComponent = /** @class */ (function () {
-    function SidebarComponent(router) {
+    function SidebarComponent(router, userService) {
+        var _this = this;
         this.router = router;
+        this.userService = userService;
         this.isCollapsed = true;
+        this.userService.current.asObservable().subscribe(function (data) {
+            _this.user = data;
+        });
     }
     SidebarComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -775,20 +782,29 @@ var SidebarComponent = /** @class */ (function () {
             _this.isCollapsed = true;
         });
     };
+    SidebarComponent.prototype.logout = function () {
+        this.userService.logout();
+    };
     SidebarComponent.ctorParameters = function () { return [
-        { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] }
+        { type: _angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"] },
+        { type: src_app_services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"] }
     ]; };
     __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
         __metadata("design:type", Array)
     ], SidebarComponent.prototype, "menuItems", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", Array)
+    ], SidebarComponent.prototype, "shortItems", void 0);
     SidebarComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-sidebar',
             template: __importDefault(__webpack_require__(/*! raw-loader!./sidebar.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/components/sidebar/sidebar.component.html")).default,
             styles: [__importDefault(__webpack_require__(/*! ./sidebar.component.scss */ "./src/app/components/sidebar/sidebar.component.scss")).default]
         }),
-        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"]])
+        __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_1__["Router"],
+            src_app_services_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"]])
     ], SidebarComponent);
     return SidebarComponent;
 }());
@@ -1656,6 +1672,9 @@ var SettingService = /** @class */ (function () {
     };
     SettingService.prototype.getPostViews = function (id) {
         return this.http.get("/api/post/" + id + "/post_views");
+    };
+    SettingService.prototype.getPostShare = function (id) {
+        return this.http.get("/api/post/" + id + "/share");
     };
     SettingService.prototype.makeRequest = function (data, type) {
         return this.http.post("/api/request/" + type, data);

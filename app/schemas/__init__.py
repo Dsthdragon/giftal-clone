@@ -29,6 +29,8 @@ class ClientSchema(ma.TableSchema):
 
     user = fields.Nested("UserSchema", only=['id', 'blocked', 'active'])
     image_url = fields.String()
+    total_referred = fields.Int()
+    total_activity = fields.Int()
 
     pin = fields.Nested("ClientPinSchema", exclude=['client', 'vendor'])
 

@@ -120,6 +120,14 @@ class Client(UserMixin, db.Model):
     pin = db.relationship("ClientPin", backref=db.backref("client", lazy=True), uselist=False)
     client_request = db.relationship("ClientRequest", backref=db.backref("client", lazy=True), uselist=False)
 
+    @hybrid_property
+    def total_referred(self):
+        return len(Client.query.filter_by(referral_id=self.id).all())
+
+    @hybrid_property
+    def total_activity(self):
+        return len(self.activities)
+
 
 class AdminRole(db.Model):
     id = db.Column(db.Integer, primary_key=True)

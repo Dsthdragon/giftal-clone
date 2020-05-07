@@ -14,7 +14,7 @@ class Activity(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     client_id = db.Column(db.Integer, db.ForeignKey("client.id"), nullable=False)
 
-    client = db.relationship("Client", backref=db.backref("activity", lazy=True))
+    client = db.relationship("Client", backref=db.backref("activities", lazy=True))
     post_share = db.relationship("PostShare", backref=db.backref("activity", lazy=True), uselist=False)
     comment = db.relationship("Comment", backref=db.backref("activity", lazy=True), uselist=False)
     post_view = db.relationship("PostView", backref=db.backref("activity", lazy=True), uselist=False)
